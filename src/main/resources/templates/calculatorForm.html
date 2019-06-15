@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body>
+<form action="/calculate">
+    <input type="text" name="inputText">
+    <button>Oblicz</button>
+</form>
+wynik:<p th:text="${resultValue}"></p>
+historia:<p th:text="${history}"></p>
+<hr>
+<div th:if="${!history.isEmpty()}">
+    <h1>Historia</h1>
+    <ul>
+        <li th:each="item : ${history}" th:text="${item}"></li>
+    </ul>
+</div>
+</body>
+</html>
